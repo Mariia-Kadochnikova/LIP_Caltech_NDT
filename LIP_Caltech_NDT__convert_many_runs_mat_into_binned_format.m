@@ -22,9 +22,15 @@ for f = 1:N_files
     
     if f == 1
         binned_labels.stimulus_ID = binned_labels1.stimulus_ID;
+        binned_labels.stimulus_position = binned_labels1.stimulus_position;
+        binned_labels.combined_ID_position = binned_labels1.combined_ID_position;
+        
         binned_site_info = binned_site_info1;
     else
         binned_labels.stimulus_ID           = [binned_labels.stimulus_ID binned_labels1.stimulus_ID];
+        binned_labels.stimulus_position     = [binned_labels.stimulus_position binned_labels1.stimulus_position];
+        binned_labels.combined_ID_position  = [binned_labels.combined_ID_position binned_labels1.combined_ID_position];
+        
         binned_site_info.session_ID         = [binned_site_info.session_ID binned_site_info1.session_ID];
         binned_site_info.recording_channel  = [binned_site_info.recording_channel binned_site_info1.recording_channel];
         binned_site_info.unit               = [binned_site_info.unit binned_site_info1.unit];
